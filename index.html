@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="validate()">
+        <input type="text" id="name" placeholder="Enter your name">
+        <button type="submit">Submit</button>
+    </form>
+    <p id="error" style="color: red;"></p>
+
+
+
+
+
+    <script>
+        function validate() {
+            var name = document.getElementById("name").value.trim()
+            event.preventDefault()
+            if (name == "") {
+                document.getElementById('error').innerHTML = "Name is required"
+                return false;
+            }
+            const phone = '1234567890'
+            var message = `my name is ${name}.`
+            // var whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+            var emailUrl=`mailto:test@example.com?subject=sample&body=${encodeURIComponent(message)}`
+
+            window.location.href = emailUrl;
+        }
+    </script>
+</body>
+
+</html>
